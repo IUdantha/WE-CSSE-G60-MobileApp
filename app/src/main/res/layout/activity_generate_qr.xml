@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_shade_1"
+    tools:context=".activities.GenerateQR">
+
+    <FrameLayout
+        android:id="@+id/idFLcontent"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/idTVsubHead"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:elevation="1dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:text="Your QR Code will be appear here"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:id="@+id/idIVQRCode"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@color/white" />
+    </FrameLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="15dp"
+        android:hint="Add Text to embeded in QR code"
+        android:padding="5dp"
+        android:textColorHint="@color/white"
+        app:boxStrokeWidth="1dp"
+        app:hintTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/idFLcontent"
+        app:layout_constraintStart_toStartOf="@id/idFLcontent"
+        app:layout_constraintTop_toBottomOf="@+id/idFLcontent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/idEditData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:background="@color/black"
+            android:importantForAutofill="no"
+            android:inputType="textImeMultiLine|textMultiLine"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="14sp" />
+
+
+        <Button
+            android:id="@+id/idBTNGenerateSub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:text="Generate QR"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            />
+
+        <Button
+            android:id="@+id/idBTNBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:text="Back"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

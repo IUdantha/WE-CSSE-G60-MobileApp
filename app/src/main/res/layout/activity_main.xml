@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/app_logo"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="140dp"
+        android:contentDescription="@string/qr_code"
+        android:src="@drawable/app_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.585"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="128dp"
+        app:layout_constraintEnd_toEndOf="@id/app_logo"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@id/app_logo"
+        app:layout_constraintTop_toBottomOf="@id/app_logo" />
+
+
+    <!--    &lt;!&ndash;Edit text to enter text-->
+    <!--        for creating a QR code&ndash;&gt;-->
+    <!--    <EditText-->
+    <!--        android:id="@+id/idEdt"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/idIVQrcode"-->
+    <!--        android:layout_marginStart="20dp"-->
+    <!--        android:layout_marginTop="30dp"-->
+    <!--        android:layout_marginEnd="20dp"-->
+    <!--        android:autofillHints=""-->
+    <!--        android:hint="@string/enter_your_info"-->
+    <!--        android:inputType="text" />-->
+
+    <!--    &lt;!&ndash;Button for creating a QR code&ndash;&gt;-->
+    <!--    <Button-->
+    <!--        android:id="@+id/idBtnGenerateQR"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/idEdt"-->
+    <!--        android:layout_marginStart="20dp"-->
+    <!--        android:layout_marginTop="30dp"-->
+    <!--        android:layout_marginEnd="20dp"-->
+    <!--        android:text="@string/generate_qr_code" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Ticketing App</string>
+    <string name="qr_code">qr_code</string>
+    <string name="generate_qr_code">Generate QR Code</string>
+
+    <string-array name="account_types">
+        <item>Local</item>
+        <item>Foreign</item>
+    </string-array>
+
+    <string-array name="violation_types">
+        <item>Fare Evasion</item>
+        <item>Unruly Behavior</item>
+        <item>Safety Violation</item>
+    </string-array>
+
+</resources>
