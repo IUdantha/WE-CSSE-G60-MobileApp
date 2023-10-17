@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/yellow_back"
+    tools:context=".activities.Home">
+
+    <ImageView
+        android:id="@+id/mainLogo"
+        android:layout_width="200dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/main_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/idTVHeading"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:text="Welcome To Our Ticketing App"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/black_shade_1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/mainLogo"
+        app:layout_constraintHorizontal_bias="0.672"
+        app:layout_constraintStart_toStartOf="@id/mainLogo"
+        app:layout_constraintTop_toBottomOf="@+id/mainLogo" />
+
+    <Button
+        android:id="@+id/idBTNGenerate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/generate_qr"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/idTVHeading"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/idTVHeading"
+        app:layout_constraintTop_toBottomOf="@+id/idTVHeading" />
+
+    <Button
+        android:id="@+id/idBTNScan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/scan_qr"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/idBTNGenerate"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/idBTNGenerate"
+        app:layout_constraintTop_toBottomOf="@+id/idBTNGenerate" />
+
+    <Button
+        android:id="@+id/idBTNLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/idBTNScan"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/idBTNScan"
+        app:layout_constraintTop_toBottomOf="@+id/idBTNScan" />
+
+    <Button
+        android:id="@+id/idBTNRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/register"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/idBTNLogin"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/idBTNLogin"
+        app:layout_constraintTop_toBottomOf="@+id/idBTNLogin" />
+
+    <Button
+        android:id="@+id/idBTNViolation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/Violation"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/idBTNRegister"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/idBTNRegister"
+        app:layout_constraintTop_toBottomOf="@+id/idBTNRegister" />
+
+    <Button
+        android:id="@+id/idBTNAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/my_account"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/idBTNViolation"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/idBTNViolation"
+        app:layout_constraintTop_toBottomOf="@+id/idBTNViolation" />
+
+    <Button
+        android:id="@+id/idBTNMyAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/my_account"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/idBTNViolation"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/idBTNViolation"
+        app:layout_constraintTop_toBottomOf="@+id/idBTNViolation" />
+
+    <Button
+        android:id="@+id/idBTNHomePassenger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/home_passenger"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/idBTNMyAccount"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/idBTNMyAccount"
+        app:layout_constraintTop_toBottomOf="@+id/idBTNMyAccount" />
+
+    <Button
+        android:id="@+id/idBTNHomeInspector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/home_inspector"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/idBTNHomePassenger"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/idBTNHomePassenger"
+        app:layout_constraintTop_toBottomOf="@+id/idBTNHomePassenger" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

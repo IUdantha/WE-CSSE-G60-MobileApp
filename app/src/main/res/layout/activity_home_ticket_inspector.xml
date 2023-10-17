@@ -6,4 +6,100 @@
     android:layout_height="match_parent"
     tools:context=".activities.HomeTicketInspector">
 
+    <TextView
+        android:id="@+id/idTVWelcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="120dp"
+        android:height="50dp"
+        android:text="Welcome, Ticket Inspector"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textColor="@color/DarkYellow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/idCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/idTVWelcome"
+        app:layout_constraintStart_toStartOf="@id/idTVWelcome"
+        app:layout_constraintStart_toEndOf="@id/idTVWelcome">
+
+        <LinearLayout
+            android:id="@+id/row1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/card1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:width="150dp"
+                    android:height="150dp"
+                    android:gravity="center"
+                    android:text="card1"
+                    android:textSize="20sp"
+                    android:textAlignment="center"
+                    android:background="@drawable/rounded_yellow_button"
+                    android:layout_margin="20dp"/>
+
+                <TextView
+                    android:id="@+id/card2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:width="150dp"
+                    android:height="150dp"
+                    android:gravity="center"
+                    android:text="card2"
+                    android:textSize="20sp"
+                    android:background="@drawable/rounded_yellow_button"
+                    android:textAlignment="center"
+                    android:layout_margin="20dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center" >
+
+            <TextView
+                android:id="@+id/card3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="150dp"
+                android:height="150dp"
+                android:gravity="center"
+                android:text="card1"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:background="@drawable/rounded_yellow_button"
+                android:layout_margin="20dp"/>
+
+            <TextView
+                android:id="@+id/card4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="150dp"
+                android:height="150dp"
+                android:gravity="center"
+                android:text="card2"
+                android:textSize="20sp"
+                android:background="@drawable/rounded_yellow_button"
+                android:textAlignment="center"
+                android:layout_margin="20dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

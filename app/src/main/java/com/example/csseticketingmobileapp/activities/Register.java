@@ -1,5 +1,6 @@
 package com.example.csseticketingmobileapp.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,6 +15,9 @@ import org.bson.Document;
 import com.example.csseticketingmobileapp.network.MongoDBConnection;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+
+import android.util.Log;
+
 
 public class Register extends AppCompatActivity {
 
@@ -44,6 +48,8 @@ public class Register extends AppCompatActivity {
         emailEditText = findViewById(R.id.editTextEmail);
         passwordEditText = findViewById(R.id.editTextPassword);
         registerButton = findViewById(R.id.idBTNRegister);
+
+        Log.d("Register","Inside On create method");
 
         // Set up the spinner with an OnItemSelectedListener
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.account_types, android.R.layout.simple_spinner_item);
@@ -157,5 +163,11 @@ public class Register extends AppCompatActivity {
         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
         return email.matches(emailPattern);
     }
+
+    public void openSignInScreen(View view) {
+        Intent intent = new Intent(this, Register.class); // Replace Register.class with the actual Register activity class name
+        startActivity(intent);
+    }
+
 
 }

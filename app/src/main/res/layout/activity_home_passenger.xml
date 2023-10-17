@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/yellow_back"
     tools:context=".activities.HomePassenger">
 
     <ImageView
@@ -12,7 +12,7 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="60dp"
-        android:src="@drawable/app_logo"
+        android:src="@drawable/main_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,7 +28,7 @@
         android:text="Welcome To Our Ticketing App"
         android:textAlignment="center"
         android:textStyle="bold"
-        android:textColor="@color/purple_700"
+        android:textColor="@color/DarkYellow"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@id/mainLogo"
         app:layout_constraintHorizontal_bias="0.672"

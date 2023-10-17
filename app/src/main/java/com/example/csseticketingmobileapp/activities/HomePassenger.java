@@ -29,12 +29,12 @@ public class HomePassenger extends AppCompatActivity {
             }
         });
 
-//        scanQRBtn.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(HomePassenger.this, ScanQR.class);
-//                startActivity(i);
-//            }
-//        });
+        scanQRBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(HomePassenger.this, ScanQR.class);
+                startActivity(i);
+            }
+        });
     }
 }

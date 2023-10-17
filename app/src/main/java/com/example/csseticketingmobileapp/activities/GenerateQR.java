@@ -58,7 +58,7 @@ public class GenerateQR extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(GenerateQR.this, HomePassenger.class);
+                Intent i = new Intent(GenerateQR.this, Home.class);
                 startActivity(i);
             }
         });

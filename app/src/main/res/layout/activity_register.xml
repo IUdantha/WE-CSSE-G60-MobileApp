@@ -6,16 +6,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/yellow_back"
     android:padding="16dp"
     android:gravity="center"
     tools:context=".activities.Register">
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/app_logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/main_logo"
         android:contentDescription="@string/app_name"
         android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create an Account"
+        android:textColor="#6E5306"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:gravity="left"/>
 
     <EditText
         android:id="@+id/editTextFirstName"
@@ -23,7 +33,7 @@
         android:layout_height="wrap_content"
         android:hint="First Name"
         android:inputType="textCapWords"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="12dp"/>
 
     <EditText
         android:id="@+id/editTextLastName"
@@ -31,7 +41,7 @@
         android:layout_height="wrap_content"
         android:hint="Last Name"
         android:inputType="textCapWords"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="12dp"/>
 
     <EditText
         android:id="@+id/editTextEmail"
@@ -55,13 +65,14 @@
         android:text="Account Type"
         android:textColor="@color/black"
         android:labelFor="@id/spinnerAccountType"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="12dp"/>
 
     <Spinner
         android:id="@+id/spinnerAccountType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
+        android:padding="10dp"
         android:entries="@array/account_types" />
 
     <EditText
@@ -86,9 +97,9 @@
         android:id="@+id/idBTNRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:background="@drawable/rounded_button"
-        android:layout_marginTop="25dp"/>
+        android:text="@string/sign_up"
+        android:background="@color/yellow"
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:layout_width="wrap_content"

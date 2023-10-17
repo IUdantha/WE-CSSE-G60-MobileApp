@@ -1,7 +1,19 @@
 <resources>
-    <string name="app_name">Ticketing App</string>
+    <string name="app_name">Ticketing</string>
     <string name="qr_code">qr_code</string>
     <string name="generate_qr_code">Generate QR Code</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="generate_qr">Generate QR</string>
+    <string name="scan_qr">Scan QR</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="home">Home</string>
+    <string name="my_account">My Account</string>
+    <string name="payment">Payments</string>
+    <string name="home_passenger">Home Passenger</string>
+    <string name="home_inspector">Home Ticket Inspector</string>
+    <string name="Violation">Violation</string>
 
     <string-array name="account_types">
         <item>Local</item>
