@@ -1,6 +1,7 @@
 package com.example.csseticketingmobileapp.activities;
 
 import android.content.Intent;
+import android.health.connect.datatypes.units.Length;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -49,31 +50,6 @@ public class Register extends AppCompatActivity {
         passwordEditText = findViewById(R.id.editTextPassword);
         registerButton = findViewById(R.id.idBTNRegister);
 
-        Log.d("Register","Inside On create method");
-
-        // Set up the spinner with an OnItemSelectedListener
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.account_types, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        accountTypeSpinner.setAdapter(adapter);
-        accountTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                // Check the selected item and toggle visibility of NIC or Passport EditText
-                String selectedAccountType = accountTypeSpinner.getSelectedItem().toString();
-                if ("Local".equals(selectedAccountType)) {
-                    nicEditText.setVisibility(View.VISIBLE);
-                    passportEditText.setVisibility(View.GONE);
-                } else {
-                    nicEditText.setVisibility(View.GONE);
-                    passportEditText.setVisibility(View.VISIBLE);
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                // Do nothing
-            }
-        });
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,77 +67,14 @@ public class Register extends AppCompatActivity {
                 }
 
                 if (dataIsValid) {
-                    // Create a new Document for the passenger
-                    Document passengerDocument = new Document("fName", firstName)
-                            .append("lName", lastName)
-                            .append("email", email)
-                            .append("password", password);
-
-                    // Insert the passenger document into the "passengers" collection
-                    collection.insertOne(passengerDocument);
-
-                    // Provide feedback to the user
-                    showToast("Registration successful");
-
-                    // Redirect to another activity or perform other actions as needed.
+                   Toast.makeText(Register.this, "Data valid", Toast.LENGTH_SHORT).show();
                 } else {
-                    // Data validation failed
-                    showToast("Registration unsuccessful. Please check your input.");
+                    Toast.makeText(Register.this, "Data invalid", Toast.LENGTH_SHORT).show();
                 }
             }
         }
         );
 
-    }
-
-    // Helper method to display a Toast message
-    private void showToast(String message) {
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
-    private boolean isValidRegistrationData(String firstName, String lastName, String email, String password) {
-        if (firstName.isEmpty()) {
-            // First name is empty
-            firstNameEditText.setError("First name is required.");
-            firstNameEditText.requestFocus();
-            return false;
-        }
-
-        if (lastName.isEmpty()) {
-            // Last name is empty
-            lastNameEditText.setError("Last name is required.");
-            lastNameEditText.requestFocus();
-            return false;
-        }
-
-        if (email.isEmpty()) {
-            // Email is empty
-            emailEditText.setError("Email is required.");
-            emailEditText.requestFocus();
-            return false;
-        } else if (!isValidEmail(email)) {
-            // Email is not in a valid format
-            emailEditText.setError("Invalid email format.");
-            emailEditText.requestFocus();
-            return false;
-        }
-
-        if (password.isEmpty()) {
-            // Password is empty
-            passwordEditText.setError("Password is required.");
-            passwordEditText.requestFocus();
-            return false;
-        }
-
-        // If all checks pass, the data is considered valid
-        return true;
-    }
-
-    private boolean isValidEmail(String email) {
-        // This is a basic email validation using a simple regular expression
-        // You can use a more complex regular expression or a library like Android's Patterns.EMAIL_ADDRESS for better validation
-        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-        return email.matches(emailPattern);
     }
 
     public void openSignInScreen(View view) {
