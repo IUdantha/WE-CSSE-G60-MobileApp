@@ -17,6 +17,9 @@
         android:theme="@style/Theme.CSSETicketingMobileApp"
         tools:targetApi="31">
         <activity
+            android:name=".activities.RegisterPassenger"
+            android:exported="false" />
+        <activity
             android:name=".activities.ChooseRole"
             android:exported="false" />
         <activity

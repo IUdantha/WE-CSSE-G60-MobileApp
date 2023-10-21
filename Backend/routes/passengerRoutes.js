@@ -3,12 +3,12 @@ let Passenger = require("../models/Passenger");
 
 // --------- Adding a passenger ----------
 router.route("/add").post((req, res) => {
-  const passengerId = req.body.passengerId;
   const fName = req.body.fName;
   const lName = req.body.lName;
   const email = req.body.email;
   const password = req.body.password;
   const accountType = req.body.accountType;
+  const identifier = req.body.identifier;
 
   console.log("Inside the router");
 
@@ -18,6 +18,7 @@ router.route("/add").post((req, res) => {
     email,
     password,
     accountType,
+    identifier,
   });
 
   // js then = java if

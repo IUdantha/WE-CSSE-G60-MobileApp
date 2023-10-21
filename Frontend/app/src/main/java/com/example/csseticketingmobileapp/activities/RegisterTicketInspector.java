@@ -5,13 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.csseticketingmobileapp.R;
+import com.example.csseticketingmobileapp.config.ServerConfig;
 
 import java.io.IOException;
 
@@ -64,22 +64,13 @@ public class RegisterTicketInspector extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-//        loginLink.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // Navigate to the registration page
-//                Intent intent = new Intent(Register.this, Login.class);
-//                startActivity(intent);
-//            }
-//        });
     }
 
     private void addTicketInspector( String empID, String fullName, String email, String password) {
         OkHttpClient client = new OkHttpClient();
 
         // Define the URL of your server's API endpoint
-        String serverUrl = "http://192.168.1.3:8090/ticketInspector/add";
+        String serverUrl = ServerConfig.SERVER_URL + "/ticketInspector/add";
 
         // Create a JSON request body with the passenger data
         MediaType JSON = MediaType.parse("application/json; charset=utf-8");

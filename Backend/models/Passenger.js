@@ -22,6 +22,9 @@ const passengerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  identifier: {
+    type:String,
+  }
 });
 
 // Create the Passenger model
