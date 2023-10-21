@@ -4,33 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/yellow_back"
+    android:background="@drawable/splash_screen"
     tools:context=".activities.MainActivity">
 
+<!--    <ProgressBar-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/app_logo"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="128dp"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/app_logo"-->
+<!--        app:layout_constraintHorizontal_bias="0.496"-->
+<!--        app:layout_constraintStart_toStartOf="@id/app_logo"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/app_logo" />-->
 
-    <ImageView
-        android:id="@+id/app_logo"
-        android:layout_width="258dp"
-        android:layout_height="257dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="144dp"
-        android:contentDescription="@string/qr_code"
-        android:src="@drawable/main_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ProgressBar
-        android:layout_width="wrap_content"
+<!--    android:background="@drawable/rounded_white"    -->
+    <Button
+        android:id="@+id/btnGetStarted"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/app_logo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="128dp"
-        app:layout_constraintEnd_toEndOf="@id/app_logo"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@id/app_logo"
-        app:layout_constraintTop_toBottomOf="@id/app_logo" />
-
+        android:text="Get Started"
+        android:textSize="20sp"
+        android:textColor="@color/Orange"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:padding="15dp"
+        android:textFontWeight="@integer/material_motion_duration_short_2"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="65dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

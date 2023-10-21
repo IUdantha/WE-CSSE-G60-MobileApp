@@ -3,7 +3,6 @@ let Passenger = require("../models/Passenger");
 
 // --------- Adding a passenger ----------
 router.route("/add").post((req, res) => {
-  //http://localhost:8060/passenger/add
   const passengerId = req.body.passengerId;
   const fName = req.body.fName;
   const lName = req.body.lName;
@@ -78,7 +77,6 @@ router.route("/add").post((req, res) => {
 //     })
 // })
 
-// --------- Get data from only one student----------
 router.route("/get/:passengerId").get(async (req, res) => {
   let passengerId = req.params.passengerId;
 
@@ -98,9 +96,9 @@ router.route("/get/:passengerId").get(async (req, res) => {
 });
 
 // Handle POST request for checking credentials
-router.route("/passenger/checkCredentials").post(async (req, res) => {
+router.route("/checkCredentials").post(async (req, res) => {
   const { email, password } = req.body;
-
+  console.log("Inside the check credentials router");
   try {
     // Query the database to find a passenger with the provided email and password
     const passenger = await Passenger.findOne({ email, password });

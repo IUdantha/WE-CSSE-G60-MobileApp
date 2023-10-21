@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    android:background="@drawable/back_1"
+    tools:context=".activities.ChooseRole">
+
+    <TextView
+        android:id="@+id/idTVInspectorRegisterHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="Let's Get Started"
+        android:textColor="@color/DarkYellow"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.034" />
+
+    <TextView
+        android:id="@+id/instructions"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:text="Welcome to our platform! To get started, please select your account type. Are you a"
+        android:textColor="@color/DarkYellow"
+        app:layout_constraintEnd_toEndOf="@id/idTVInspectorRegisterHeading"
+        app:layout_constraintStart_toStartOf="@id/idTVInspectorRegisterHeading"
+        app:layout_constraintTop_toBottomOf="@id/idTVInspectorRegisterHeading" />
+
+    <TextView
+        android:id="@+id/idTVChooseRoleTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:paddingLeft="20dp"
+        android:text="Choose Your Role"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/instructions"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/instructions"
+        app:layout_constraintTop_toBottomOf="@id/instructions" />
+
+    <RadioGroup
+        android:id="@+id/account_type_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTVChooseRoleTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
+        android:paddingLeft="60dp"
+        app:layout_constraintEnd_toEndOf="@+id/idTVChooseRoleTitle"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/idTVChooseRoleTitle"
+        app:layout_constraintTop_toBottomOf="@+id/idTVChooseRoleTitle">
+
+        <RadioButton
+            android:id="@+id/passenger_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:text="Passenger"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/inspector_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:text="Ticket Inspector"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/continue_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/account_type_group"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="84dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:enabled="false"
+        android:textColor="@color/DarkYellow"
+        android:text="Continue"
+        app:layout_constraintEnd_toEndOf="@id/account_type_group"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/account_type_group"
+        app:layout_constraintTop_toBottomOf="@id/account_type_group" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

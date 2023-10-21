@@ -16,4 +16,6 @@
     <color name="black_shade_1">#292036</color>
     <color name="yellow">#ffce44</color>
     <color name="DarkYellow">#715608</color>
+    <color name="Grey">#808080</color>
+    <color name="Orange">#F9A825</color>
 </resources>

@@ -46,10 +46,10 @@ dependencies {
     //newly added dependency for scan
     implementation 'com.journeyapps:zxing-android-embedded:4.2.0'
 
-    //for mongoDB Driver
-    //implementation 'org.mongodb:mongo-java-driver:3.12.10' // Use the latest version available
+    // mongodb
+    implementation 'org.mongodb:mongo-java-driver:3.12.10' // Replace with the latest version
 
-    //for mongodb java driver
-    implementation 'org.mongodb:mongodb-driver-sync:4.4.0'
+    //okHttp
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
 
 }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    tools:context=".activities.Login"
     android:background="@drawable/yellow_back">
 
     <ImageView
@@ -40,7 +40,7 @@
         <EditText
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="16dp"
             android:hint="Email"
             android:textColor="@color/black"
@@ -49,7 +49,7 @@
         <EditText
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="20dp"
@@ -62,8 +62,9 @@
             android:id="@+id/signInButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxWidth="320dp"
             android:layout_margin="16dp"
-            android:background="#FFA000"
+            android:background="#9A6408"
             android:text="@string/sign_in"
             android:textSize="16sp"
             android:textColor="#FFFFFF" />
@@ -85,7 +86,9 @@
     <TextView
         android:id="@+id/signUpLink"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:textAlignment="center"
+        android:gravity="center"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/formLayout"
         android:layout_marginTop="33dp"
@@ -93,6 +96,6 @@
         android:textSize="16sp"
         android:textColor="#CF8516"
         android:clickable="true"
-        android:onClick="openRegisterScreen"/>
+        android:onClick="openChooseRole"/>
 
 </RelativeLayout>

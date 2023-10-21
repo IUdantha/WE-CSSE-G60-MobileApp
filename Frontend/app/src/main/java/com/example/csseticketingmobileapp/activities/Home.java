@@ -71,7 +71,7 @@ public class Home extends AppCompatActivity {
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Home.this, Register.class);
+                Intent i = new Intent(Home.this, ChooseRole.class);
                 startActivity(i);
             }
         });

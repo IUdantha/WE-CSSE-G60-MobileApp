@@ -1,9 +1,5 @@
 package com.example.csseticketingmobileapp.activities;
 
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +9,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.csseticketingmobileapp.R;
+
+import java.io.IOException;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -22,62 +22,68 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-import java.io.IOException;
 
-public class Register extends AppCompatActivity {
-    EditText editTextFirstName, editTextLastName, editTextEmail, editTextPassword;
-    Spinner spinnerAccountType;
-    Button btnRegister;
+
+public class RegisterTicketInspector extends AppCompatActivity {
+    EditText editTextEmpID, editTextfullName, editTextEmail, editTextPassword;
+    Button btnRegister, btnOtherHome;
     TextView loginLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_register_ticket_inspector);
 
         // Initialize the form input fields
-        editTextFirstName = findViewById(R.id.editTextFirstName);
-        editTextLastName = findViewById(R.id.editTextLastName);
-        editTextEmail = findViewById(R.id.editTextEmail);
-        editTextPassword = findViewById(R.id.editTextPassword);
-        spinnerAccountType = findViewById(R.id.spinnerAccountType);
-        btnRegister = findViewById(R.id.idBTNRegister);
-        loginLink = findViewById(R.id.loginLink);
+        editTextEmpID = findViewById(R.id.idEditTextEmpID);
+        editTextfullName = findViewById(R.id.idEditTextInspectorName);
+        editTextEmail = findViewById(R.id.idEditTextInspectorEmail);
+        editTextPassword = findViewById(R.id.idEditTextInspectorPassword);
+        btnRegister = findViewById(R.id.idBTNSignUp);
+//        loginLink = findViewById(R.id.loginLink);
+        btnOtherHome = findViewById(R.id.idBTNOtherHome);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Get the data from the form
-                String fName = editTextFirstName.getText().toString();
-                String lName = editTextLastName.getText().toString();
+                String empID = editTextEmpID.getText().toString();
+                String fullName = editTextfullName.getText().toString();
                 String email = editTextEmail.getText().toString();
                 String password = editTextPassword.getText().toString();
-                String accountType = spinnerAccountType.getSelectedItem().toString();
 
-                // Call the method to add a passenger
-                addPassenger(fName, lName, email, password, accountType);
+                // Call the method to add a Ticket Inspector
+                addTicketInspector(empID, fullName, email, password);
             }
         });
 
-        loginLink.setOnClickListener(new View.OnClickListener() {
+        btnOtherHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Navigate to the registration page
-                Intent intent = new Intent(Register.this, Login.class);
-                startActivity(intent);
+                Intent i = new Intent(RegisterTicketInspector.this, Home.class);
+                startActivity(i);
             }
         });
+
+//        loginLink.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // Navigate to the registration page
+//                Intent intent = new Intent(Register.this, Login.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 
-    private void addPassenger( String fName, String lName, String email, String password, String accountType) {
+    private void addTicketInspector( String empID, String fullName, String email, String password) {
         OkHttpClient client = new OkHttpClient();
 
         // Define the URL of your server's API endpoint
-        String serverUrl = "http://192.168.1.3:8090/passenger/add";
+        String serverUrl = "http://192.168.1.3:8090/ticketInspector/add";
 
         // Create a JSON request body with the passenger data
         MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-        String json = "{\"fName\":\"" + fName + "\",\"lName\":\"" + lName + "\",\"email\":\"" + email + "\",\"password\":\"" + password + "\",\"accountType\":\"" + accountType + "\"}";
+        String json = "{\"empID\":\"" + empID + "\",\"fullName\":\"" + fullName + "\",\"email\":\"" + email + "\",\"password\":\"" + password + "\"}";
         RequestBody requestBody = RequestBody.create(JSON, json);
 
         // Create a POST request
@@ -107,7 +113,7 @@ public class Register extends AppCompatActivity {
                         }
                     });
 
-                    Intent i = new Intent(Register.this, Home.class);
+                    Intent i = new Intent(RegisterTicketInspector.this, HomeTicketInspector.class);
                     startActivity(i);
 
                 } else {

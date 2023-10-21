@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create an Account"
-        android:textColor="#6E5306"
+        android:textColor="@color/DarkYellow"
         android:textSize="30sp"
         android:textStyle="bold"
         android:gravity="left"/>
@@ -32,6 +32,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="First Name"
+        android:textColor="@color/black"
+        android:textColorHint="@color/Grey"
+        android:padding="12dp"
         android:inputType="textCapWords"
         android:layout_marginTop="12dp"/>
 
@@ -39,7 +42,10 @@
         android:id="@+id/editTextLastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="12dp"
         android:hint="Last Name"
+        android:textColor="@color/black"
+        android:textColorHint="@color/Grey"
         android:inputType="textCapWords"
         android:layout_marginTop="12dp"/>
 
@@ -48,6 +54,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
+        android:textColor="@color/black"
+        android:textColorHint="@color/Grey"
+        android:padding="12dp"
         android:inputType="textEmailAddress"
         android:layout_marginTop="12dp"/>
 
@@ -56,6 +65,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
+        android:textColor="@color/black"
+        android:textColorHint="@color/Grey"
+        android:padding="12dp"
         android:inputType="textPassword"
         android:layout_marginTop="12dp"/>
 
@@ -63,15 +75,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Account Type"
+        android:textSize="16sp"
+        android:paddingLeft="10dp"
         android:textColor="@color/black"
         android:labelFor="@id/spinnerAccountType"
-        android:layout_marginTop="12dp"/>
+        android:layout_marginTop="20dp"/>
 
     <Spinner
         android:id="@+id/spinnerAccountType"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/Grey"
+        android:layout_height="48dp"
         android:padding="10dp"
         android:entries="@array/account_types" />
 
@@ -80,6 +95,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="NIC"
+        android:textColor="@color/black"
+        android:textColorHint="@color/Grey"
         android:inputType="text"
         android:layout_marginTop="12dp"
         android:visibility="gone" />
@@ -89,6 +106,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Passport"
+        android:textColor="@color/black"
+        android:textColorHint="@color/Grey"
         android:inputType="text"
         android:layout_marginTop="12dp"
         android:visibility="gone" />
@@ -98,21 +117,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sign_up"
-        android:background="@color/yellow"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/DarkYellow"
         android:layout_marginTop="10dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Already have an account? "
+        android:textColor="@color/DarkYellow"
+        android:textStyle="bold"
+        android:textSize="16sp"
         android:layout_marginTop="20dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/loginLink"
+        android:layout_width="104dp"
+        android:layout_height="48dp"
+        android:clickable="true"
+        android:onClick="openLoginScreen"
+        android:gravity="center"
+        android:textAlignment="center"
         android:text="Sign In"
         android:textColor="@color/lightBlue"
-        android:layout_marginTop="3dp"
-        android:clickable="true"
-        android:onClick="openSignInScreen"/>
+        android:textSize="16sp" />
 </LinearLayout>
