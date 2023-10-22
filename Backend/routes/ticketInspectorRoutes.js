@@ -1,5 +1,6 @@
 const router = require("express").Router();
 let TicketInspector = require("../models/TicketInspector");
+let Passenger = require("../models/Passenger");
 
 // --------- Adding a Ticket Inspector ----------
 router.route("/add").post((req, res) => {
@@ -14,7 +15,7 @@ router.route("/add").post((req, res) => {
     empID,
     fullName,
     email,
-    password
+    password,
   });
 
   // js then = java if
@@ -29,9 +30,10 @@ router.route("/add").post((req, res) => {
     });
 });
 
+
 // router.route("/get/:passengerId").get(async (req, res) => {
 //     let passengerId = req.params.passengerId;
-  
+
 //     const passenger = await Passenger.findById(passengerId)
 //       .then((passenger) => {
 //         res.status(200).send({
@@ -46,8 +48,8 @@ router.route("/add").post((req, res) => {
 //           .send({ status: "Error with get passenger", error: err.message });
 //       });
 //   });
-  
-  // Handle POST request for checking credentials
+
+// Handle POST request for checking credentials
 router.route("/checkCredentials").post(async (req, res) => {
   const { email, password } = req.body;
   console.log("Inside the check credentials router");
@@ -71,4 +73,4 @@ router.route("/checkCredentials").post(async (req, res) => {
   }
 });
 
-  module.exports = router;
+module.exports = router;

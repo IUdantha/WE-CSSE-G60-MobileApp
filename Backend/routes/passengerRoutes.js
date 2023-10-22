@@ -34,14 +34,16 @@ router.route("/add").post((req, res) => {
 });
 
 // ---------- Viewg all passengers -----------
-router.route("/").get((req,res) => {    //http://localhost:8060/student/
-    Passenger.find().then((passengers) => {
-        res.json(passengers)
-    }).catch((err) => {
-        console.log(err)
+router.route("/").get((req, res) => {
+  //http://localhost:8060/student/
+  Passenger.find()
+    .then((passengers) => {
+      res.json(passengers);
     })
-})
-
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
 router.route("/get/:passengerId").get(async (req, res) => {
   let passengerId = req.params.passengerId;
@@ -82,6 +84,27 @@ router.route("/checkCredentials").post(async (req, res) => {
     res
       .status(500)
       .json({ status: "Error checking credentials", error: error.message });
+  }
+});
+
+// Handle POST request for checking passenger violation
+// Handle POST request for checking passenger violation
+router.route("/checkViolation").post(async (req, res) => {
+  const passengerID = req.body.passengerID;
+  console.log("Checking Passenger Violation");
+
+  try {
+    const passenger = await Passenger.findById(passengerID);
+
+    if (passenger) {
+      console.log("Valid Passenger");
+      return res.json({ isValid: true, passenger });
+    }
+
+    console.log("Violation Detected");
+    return res.json({ isValid: false });
+  } catch (error) {
+    return res.status(500).json({ status: "Error checking Passenger violation", error: error.message });
   }
 });
 

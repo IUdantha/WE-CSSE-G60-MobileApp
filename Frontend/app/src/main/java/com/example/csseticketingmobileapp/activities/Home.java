@@ -12,14 +12,13 @@ import com.example.csseticketingmobileapp.R;
 
 public class Home extends AppCompatActivity {
 
-    private Button generateQRBtn, scanQRBtn, loginBtn, registerBtn, violationBtn, myAccountBtn, homePassengerBtn, homeInspectorBtn ;
+    private Button scanQRBtn, loginBtn, registerBtn, violationBtn, myAccountBtn, homePassengerBtn, homeInspectorBtn ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        generateQRBtn = findViewById(R.id.idBTNGenerate);
         scanQRBtn = findViewById(R.id.idBTNScan);
         homePassengerBtn = findViewById(R.id.idBTNHomePassenger);
         homeInspectorBtn = findViewById(R.id.idBTNHomeInspector);

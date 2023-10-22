@@ -6,4 +6,57 @@
     android:layout_height="match_parent"
     tools:context=".activities.ScanQR">
 
+    <ImageView
+        android:id="@+id/backIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/icon_back"
+        android:clickable="true"
+        android:onClick="navigateToScanQR"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/imageViewVerify"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="132dp"
+        android:background="@drawable/success_yellow2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/passengerInfoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_marginTop="36dp"
+        android:gravity="fill"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewVerify"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/imageViewVerify"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewVerify"
+        />
+
+    <Button
+        android:id="@+id/btnScanAgain"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="184dp"
+        android:background="#A15A00"
+        android:text="Scan Again"
+        app:layout_constraintEnd_toEndOf="@id/passengerInfoTextView"
+        app:layout_constraintHorizontal_bias="0.233"
+        app:layout_constraintStart_toStartOf="@id/passengerInfoTextView"
+        app:layout_constraintTop_toBottomOf="@+id/passengerInfoTextView"
+        android:visibility="gone"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

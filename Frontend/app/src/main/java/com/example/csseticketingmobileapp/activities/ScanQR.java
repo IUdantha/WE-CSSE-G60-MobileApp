@@ -8,26 +8,40 @@ import androidx.core.content.ContextCompat;
 import android.content.pm.PackageManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.csseticketingmobileapp.R;
+import com.example.csseticketingmobileapp.network.PassengerViolationHandler;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 public class ScanQR extends AppCompatActivity {
 
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 200;
+    Button btnScanAgain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan_qr);
 
+        btnScanAgain = findViewById(R.id.btnScanAgain);
+
         if (checkCameraPermission()) {
             startQRScanner();
         } else {
             requestCameraPermission();
         }
+
+        btnScanAgain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ScanQR.this, ScanQR.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private boolean checkCameraPermission() {
@@ -41,7 +55,7 @@ public class ScanQR extends AppCompatActivity {
 
     private void startQRScanner() {
         IntentIntegrator integrator = new IntentIntegrator(this);
-        integrator.setPrompt("Scan a QR Code");
+        integrator.setPrompt("Scan QR Code");
         integrator.setBeepEnabled(true);
         integrator.setOrientationLocked(true);
         integrator.initiateScan();
@@ -56,10 +70,12 @@ public class ScanQR extends AppCompatActivity {
             if (result != null) {
                 if (result.getContents() != null) {
                     String scannedData = result.getContents();
-                    Toast.makeText(this, "Scanned data: " + scannedData, Toast.LENGTH_LONG).show();
-                    // Handle the scanned data as needed
+
+                    // Send scanned data to server for verification
+                    PassengerViolationHandler.verifyPassengerOrReportViolation(scannedData, this);
+
                 } else {
-                    Toast.makeText(this, "Scan cancelled", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Scan canceled", Toast.LENGTH_LONG).show();
                 }
             }
         }
@@ -76,4 +92,12 @@ public class ScanQR extends AppCompatActivity {
             }
         }
     }
+
+    // Method to handle ImageView click event
+    public void navigateToScanQR(View view) {
+        Intent intent = new Intent(this, HomeTicketInspector.class);
+        startActivity(intent);
+    }
+
+
 }
