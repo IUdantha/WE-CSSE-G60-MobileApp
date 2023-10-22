@@ -50,20 +50,5 @@
         app:layout_constraintStart_toStartOf="@+id/idTVHeading"
         app:layout_constraintTop_toBottomOf="@+id/idTVHeading" />
 
-    <Button
-        android:id="@+id/idBTNScan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/rounded_button"
-        android:text="Scan QR"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="@+id/idBTNGenerate"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/idBTNGenerate"
-        app:layout_constraintTop_toBottomOf="@+id/idBTNGenerate" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,50 +33,15 @@ router.route("/add").post((req, res) => {
     });
 });
 
-// ---------- Viewg all student -----------
-// router.route("/").get((req,res) => {    //http://localhost:8060/student/
-//     Student.find().then((students) => {
-//         res.json(students)
-//     }).catch((err) => {
-//         console.log(err)
-//     })
-// })
+// ---------- Viewg all passengers -----------
+router.route("/").get((req,res) => {    //http://localhost:8060/student/
+    Passenger.find().then((passengers) => {
+        res.json(passengers)
+    }).catch((err) => {
+        console.log(err)
+    })
+})
 
-// // --------- Update a student ----------
-// router.route("/update/:sid").put(async(req,res) => {    //http://localhost:8060/student/update/it21454882
-//     let userId = req.params.sid;
-
-//     // const name = req.body.name;
-//     // const age = Number(req.body.age);
-//     // const gender = req.body.gender;
-//     const {name, age, gender} = req.body;    //using destructure method
-
-//     const updateStudent = {
-//         name,
-//         age,
-//         gender
-//     }
-
-//     const update = await Student.findByIdAndUpdate(userId, updateStudent).then(() => {
-//         res.status(200).send({status: "user updated"});    //user: update   send update user to frontend
-//     }).catch((err) => {
-//         console.log(err);
-//         res.status(500).send({status: "Error with updating data", error: err.message()});
-//     })
-// })
-
-// // --------- Delete a student ----------
-// router.route("/delete/:sid").delete(async(req,res) => {
-//     let userId = req.params.sid;
-
-//     await Student.findByIdAndDelete(userId).then(() => {
-//         res.status(200).send({status: "User deleted"});
-//     }).catch((err) => {
-//         console.log(err.message);
-//         res.status(500).send({status: "Error with delete user", error: err.message});
-//         //500 internal error?
-//     })
-// })
 
 router.route("/get/:passengerId").get(async (req, res) => {
   let passengerId = req.params.passengerId;
@@ -107,11 +72,11 @@ router.route("/checkCredentials").post(async (req, res) => {
     if (passenger) {
       // Passenger with the provided credentials exists
       console.log("Valid credentials");
-      res.json({ status: "Credentials are correct", passenger });
+      res.json({ isValid: true, passenger });
     } else {
       // No passenger found with the provided credentials
       console.log("Invalid credentials");
-      res.status(401).json({ status: "Invalid credentials" });
+      res.status(401).json({ isValid: false, status: "Invalid credentials" });
     }
   } catch (error) {
     res
@@ -119,5 +84,6 @@ router.route("/checkCredentials").post(async (req, res) => {
       .json({ status: "Error checking credentials", error: error.message });
   }
 });
+
 
 module.exports = router;

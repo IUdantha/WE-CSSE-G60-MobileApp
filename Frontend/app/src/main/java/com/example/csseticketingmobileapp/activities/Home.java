@@ -28,14 +28,6 @@ public class Home extends AppCompatActivity {
         myAccountBtn = findViewById(R.id.idBTNMyAccount);
         violationBtn = findViewById(R.id.idBTNViolation);
 
-        generateQRBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Home.this, GenerateQR.class);
-                startActivity(i);
-            }
-        });
-
         scanQRBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

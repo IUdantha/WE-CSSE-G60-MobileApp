@@ -104,7 +104,7 @@ public class RegisterTicketInspector extends AppCompatActivity {
                         }
                     });
 
-                    Intent i = new Intent(RegisterTicketInspector.this, HomeTicketInspector.class);
+                    Intent i = new Intent(RegisterTicketInspector.this, Login.class);
                     startActivity(i);
 
                 } else {
@@ -112,7 +112,7 @@ public class RegisterTicketInspector extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(getApplicationContext(), "Server Error when passing data...", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Your username or password is incorrect...", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }

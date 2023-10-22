@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import com.example.csseticketingmobileapp.activities.Home;
 import com.example.csseticketingmobileapp.activities.HomePassenger;
+import com.example.csseticketingmobileapp.activities.Login;
 import com.example.csseticketingmobileapp.config.ServerConfig;
 import com.example.csseticketingmobileapp.interfaces.Passenger;
 
@@ -105,7 +106,7 @@ public class LocalPassenger implements Passenger {
     // Helper method to navigate to the Home activity
     private void navigateToHomeActivity() {
         if (context != null) {
-            Intent intent = new Intent(context, HomePassenger.class);
+            Intent intent = new Intent(context, Login.class);
             context.startActivity(intent);
         }
     }
