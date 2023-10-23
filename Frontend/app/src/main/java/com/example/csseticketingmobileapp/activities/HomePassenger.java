@@ -10,16 +10,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.csseticketingmobileapp.R;
+import com.example.csseticketingmobileapp.common.UserDataSingleton;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 
 public class HomePassenger extends AppCompatActivity {
-    private Button generateQRBtn;
-    private String passengerId; // Store passenger ID
+    private Button generateQRBtn, logoutBtn;
+    private String passengerId; // Store passenger ID as a global variable
+    private TextView userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +30,30 @@ public class HomePassenger extends AppCompatActivity {
         setContentView(R.layout.activity_home_passenger);
 
         generateQRBtn = findViewById(R.id.idBTNGenerate);
+        logoutBtn = findViewById(R.id.idBTNLogout);
+        userName = findViewById(R.id.TVuserName);
 
-        // Receive the passenger ID from the intent
-        Intent intent = getIntent();
-        passengerId = intent.getStringExtra("userID");
+        UserDataSingleton userDataSingleton = UserDataSingleton.getInstance();
+
+        String email = userDataSingleton.getEmail();
+        String role = userDataSingleton.getRole();
+        String fullName = userDataSingleton.getFullName();
+        passengerId = userDataSingleton.getUserId();
+
+        userName.setText(fullName);
 
         generateQRBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 generateAndShowQRCode();
+            }
+        });
+
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePassenger.this, Login.class);
+                startActivity(intent);
             }
         });
     }

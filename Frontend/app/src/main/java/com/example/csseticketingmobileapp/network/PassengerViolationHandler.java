@@ -1,5 +1,7 @@
 package com.example.csseticketingmobileapp.network;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
@@ -8,8 +10,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+
 import com.example.csseticketingmobileapp.R;
+import com.example.csseticketingmobileapp.activities.HomePassenger;
+import com.example.csseticketingmobileapp.activities.HomeTicketInspector;
 import com.example.csseticketingmobileapp.activities.ScanQR;
+import com.example.csseticketingmobileapp.activities.ViolationReport;
 import com.example.csseticketingmobileapp.config.ServerConfig;
 
 import org.json.JSONException;
@@ -93,24 +100,85 @@ public class PassengerViolationHandler {
                                             passengerInfo = passengerInfo + "Passport: " + passport;
                                         }
 
-                                        ImageView imageViewVerify = context.findViewById(R.id.imageViewVerify);
-                                        TextView passengerInfoTextView = context.findViewById(R.id.passengerInfoTextView);
-                                        ImageView backIcon = context.findViewById(R.id.backIcon);
-                                        Button btnScanAgain = context.findViewById(R.id.btnScanAgain);
+                                        // Create a custom dialog to display passenger information
+                                        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
+                                        View dialogView = context.getLayoutInflater().inflate(R.layout.activity_scan_qr, null);
+                                        dialogBuilder.setView(dialogView);
 
-                                        imageViewVerify.setVisibility(View.VISIBLE);
-                                        backIcon.setVisibility(View.VISIBLE);
-                                        btnScanAgain.setVisibility(View.VISIBLE);
-                                        passengerInfoTextView.setVisibility(View.VISIBLE);
+                                        // Find dialog elements and set the passenger info
+                                        ImageView dialogImageViewVerify = dialogView.findViewById(R.id.imageViewVerify);
+                                        Button dialogBtnScanAgain = dialogView.findViewById(R.id.btnScanAgain);
+                                        Button dialogBtnOk = dialogView.findViewById(R.id.btnOk);
+                                        TextView dialogHeader= dialogView.findViewById(R.id.TVdialogHeader);
+                                        TextView dialogPassengerInfoTextView = dialogView.findViewById(R.id.passengerInfoTextView);
 
-                                        passengerInfoTextView.setText(passengerInfo);
+                                        // Set visibility for dialog elements
+                                        dialogImageViewVerify.setVisibility(View.VISIBLE);
+                                        dialogBtnScanAgain.setVisibility(View.VISIBLE);
+                                        dialogBtnOk.setVisibility(View.VISIBLE);
+                                        dialogHeader.setVisibility(View.VISIBLE);
+                                        dialogPassengerInfoTextView.setVisibility(View.VISIBLE);
+
+                                        // Set passenger info
+                                        dialogPassengerInfoTextView.setText(passengerInfo);
+
+                                        AlertDialog dialog = dialogBuilder.create();
+                                        dialog.show();
+
+                                        dialogBtnScanAgain.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                dialog.dismiss(); // Dismiss the dialog
+                                                Intent intent = new Intent(context, ScanQR.class);
+                                                context.startActivity(intent);
+                                                context.finish(); // Close the current ScanQR activity
+                                            }
+                                        });
+
+                                        dialogBtnOk.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View v) {
+                                                dialog.dismiss(); // Dismiss the dialog
+                                                Intent intent = new Intent(context, HomeTicketInspector.class);
+                                                context.startActivity(intent);
+                                                context.finish(); // Optionally, close the current ScanQR activity
+                                            }
+                                        });
 
                                     } catch (JSONException e) {
                                         e.printStackTrace();
                                     }
                                 } else {
-                                    // It's a violation, prompt the inspector to report it
-                                    // context.showViolationReportForm(passengerID);
+                                    // Create a custom dialog to display passenger information
+                                    AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
+                                    View dialogView = context.getLayoutInflater().inflate(R.layout.dialog_detect_violation, null);
+                                    dialogBuilder.setView(dialogView);
+
+                                    Button dialogBtnReport= dialogView.findViewById(R.id.btnReport);
+                                    Button dialogBtnScanAgain = dialogView.findViewById(R.id.btnScanAgain);
+
+                                    AlertDialog dialog = dialogBuilder.create();
+                                    dialog.show();
+
+                                    dialogBtnReport.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            dialog.dismiss(); // Dismiss the dialog
+                                            Intent intent = new Intent(context, ViolationReport.class);
+                                            context.startActivity(intent);
+                                            context.finish(); // Optionally, close the current ScanQR activity
+                                        }
+                                    });
+
+                                    dialogBtnScanAgain.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            dialog.dismiss(); // Dismiss the dialog
+                                            Intent intent = new Intent(context, ScanQR.class);
+                                            context.startActivity(intent);
+                                            context.finish(); // Close the current ScanQR activity
+                                        }
+                                    });
                                 }
                             });
                         } catch (JSONException e) {

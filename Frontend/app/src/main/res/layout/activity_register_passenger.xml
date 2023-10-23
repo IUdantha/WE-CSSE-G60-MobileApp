@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
-    android:background="@drawable/back_2"
+    android:background="@drawable/back_4"
     tools:context=".activities.RegisterPassenger">
 
     <TextView
@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="15dp"
         android:gravity="left"
         android:text="Create Passenger Account"
@@ -32,7 +32,7 @@
         android:id="@+id/idTVfName"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:text="First Name"
         android:textColor="@color/black"
         android:textSize="18sp"
@@ -193,6 +193,7 @@
         android:drawableLeft="@drawable/icon_nic"
         android:drawablePadding="15dp"
         android:ems="10"
+        android:paddingLeft="10dp"
         android:textColorHint="#717070"
         android:inputType="text"
         android:layout_marginTop="12dp"
@@ -211,6 +212,7 @@
         android:background="@drawable/input_field_shape"
         android:drawableLeft="@drawable/icon_passport"
         android:drawablePadding="15dp"
+        android:paddingLeft="10dp"
         android:ems="10"
         android:textColorHint="#717070"
         android:inputType="text"

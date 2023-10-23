@@ -41,7 +41,7 @@ public class RegisterTicketInspector extends AppCompatActivity {
         editTextPassword = findViewById(R.id.idEditTextInspectorPassword);
         btnRegister = findViewById(R.id.idBTNSignUp);
 //        loginLink = findViewById(R.id.loginLink);
-        btnOtherHome = findViewById(R.id.idBTNOtherHome);
+//        btnOtherHome = findViewById(R.id.idBTNOtherHome);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,13 +57,13 @@ public class RegisterTicketInspector extends AppCompatActivity {
             }
         });
 
-        btnOtherHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(RegisterTicketInspector.this, Home.class);
-                startActivity(i);
-            }
-        });
+//        btnOtherHome.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent i = new Intent(RegisterTicketInspector.this, Home.class);
+//                startActivity(i);
+//            }
+//        });
     }
 
     private void addTicketInspector( String empID, String fullName, String email, String password) {

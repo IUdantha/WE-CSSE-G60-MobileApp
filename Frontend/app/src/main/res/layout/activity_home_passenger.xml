@@ -4,51 +4,105 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/yellow_back"
+    android:background="@drawable/back_home2"
+    android:padding="50dp"
     tools:context=".activities.HomePassenger">
-
-    <ImageView
-        android:id="@+id/mainLogo"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="60dp"
-        android:src="@drawable/main_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/idTVHeading"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
-        android:text="Welcome To Our Ticketing App"
-        android:textAlignment="center"
+        android:text="Hello,"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="50sp"
         android:textStyle="bold"
-        android:textColor="@color/DarkYellow"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@id/mainLogo"
-        app:layout_constraintHorizontal_bias="0.672"
-        app:layout_constraintStart_toStartOf="@id/mainLogo"
-        app:layout_constraintTop_toBottomOf="@+id/mainLogo" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TVuserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sandani Thilakarathna"
+        android:textSize="28sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/idTVHeading"
+        app:layout_constraintStart_toStartOf="@id/idTVHeading"
+        app:layout_constraintEnd_toEndOf="@id/idTVHeading"
+        />
+
+    \
+
+    <ImageView
+        android:id="@+id/mainLogo"
+        android:layout_width="232dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="148dp"
+        android:src="@drawable/main_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/idBTNGenerate"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/white"
         android:text="Generate QR"
         android:textAllCaps="false"
+        android:textColor="#FFA616"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/idTVHeading"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/idTVHeading"
-        app:layout_constraintTop_toBottomOf="@+id/idTVHeading" />
+        app:layout_constraintTop_toBottomOf="@+id/mainLogo"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/idBTNAccount"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/white"
+        android:text="My Account"
+        android:textAllCaps="false"
+        android:textColor="#FFA616"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/idBTNGenerate"
+        app:layout_constraintHorizontal_bias="0.725"
+        app:layout_constraintStart_toStartOf="@+id/idBTNGenerate"
+        app:layout_constraintTop_toBottomOf="@+id/idBTNGenerate"
+        app:layout_constraintVertical_bias="0.105" />
+    <Button
+        android:id="@+id/idBTNLogout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/white"
+        android:text="Log out"
+        android:textAllCaps="false"
+        android:textColor="#FFA616"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/idBTNAccount"
+        app:layout_constraintStart_toStartOf="@+id/idBTNAccount"
+        app:layout_constraintTop_toBottomOf="@+id/idBTNAccount"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

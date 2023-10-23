@@ -78,7 +78,7 @@ public class Home extends AppCompatActivity {
         violationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Home.this, ViolationForm.class);
+                Intent i = new Intent(Home.this, ViolationReport.class);
                 startActivity(i);
             }
         });

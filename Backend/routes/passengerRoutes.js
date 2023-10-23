@@ -1,5 +1,6 @@
 const router = require("express").Router();
 let Passenger = require("../models/Passenger");
+const Violation = require('../models/Violation');
 
 // --------- Adding a passenger ----------
 router.route("/add").post((req, res) => {
@@ -88,7 +89,6 @@ router.route("/checkCredentials").post(async (req, res) => {
 });
 
 // Handle POST request for checking passenger violation
-// Handle POST request for checking passenger violation
 router.route("/checkViolation").post(async (req, res) => {
   const passengerID = req.body.passengerID;
   console.log("Checking Passenger Violation");
@@ -104,9 +104,43 @@ router.route("/checkViolation").post(async (req, res) => {
     console.log("Violation Detected");
     return res.json({ isValid: false });
   } catch (error) {
-    return res.status(500).json({ status: "Error checking Passenger violation", error: error.message });
+    return res.status(500).json({ isValid: false , status: "Error checking Passenger violation", error: error.message });
   }
 });
+
+
+// Handle a POST request to store violation data
+router.post('/violation', async (req, res) => {
+  try {
+    const {
+      passengerName,
+      identifier,
+      busNumber,
+      description,
+      time,
+    } = req.body;
+
+    // Create a new Violation document
+    const violation = new Violation({
+      passengerName,
+      identifier,
+      busNumber,
+      description,
+      time,
+    });
+
+    // Save the violation document to the MongoDB collection
+    await violation.save();
+
+    res.status(201).json({ message: 'Violation data stored successfully' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'An error occurred while storing the violation data' });
+  }
+});
+
+module.exports = router;
+
 
 
 module.exports = router;
