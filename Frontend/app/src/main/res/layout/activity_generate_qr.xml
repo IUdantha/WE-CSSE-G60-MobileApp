@@ -16,16 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/idTVsubHead"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:elevation="1dp"
-            android:textAlignment="center"
-            android:gravity="center"
-            android:text="Your QR Code will be appear here"
-            android:textColor="@color/black"/>
-
         <ImageView
             android:id="@+id/idIVQRCode"
             android:layout_width="match_parent"
@@ -48,30 +38,10 @@
         app:layout_constraintStart_toStartOf="@id/idFLcontent"
         app:layout_constraintTop_toBottomOf="@+id/idFLcontent">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/idEditData"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:ems="10"
-            android:background="@color/black"
-            android:importantForAutofill="no"
-            android:inputType="textImeMultiLine|textMultiLine"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="14sp" />
 
 
-        <Button
-            android:id="@+id/idBTNGenerateSub"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_button"
-            android:text="Generate QR"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            />
+
+
 
         <Button
             android:id="@+id/idBTNBack"

@@ -21,9 +21,7 @@ import com.google.zxing.qrcode.QRCodeWriter;
 
 public class GenerateQR extends AppCompatActivity {
     private ImageView qrCodeIV;
-    private TextInputEditText dataEdit;
-    private Button generateQRBtn, backBtn;
-    private TextView instructionText;
+    private Button backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,29 +29,19 @@ public class GenerateQR extends AppCompatActivity {
         setContentView(R.layout.activity_generate_qr);
 
         qrCodeIV = findViewById(R.id.idIVQRCode);
-        dataEdit = findViewById(R.id.idEditData);
-        generateQRBtn = findViewById(R.id.idBTNGenerateSub);
-        instructionText = findViewById(R.id.idTVsubHead);
         backBtn = findViewById(R.id.idBTNBack);
 
-        generateQRBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String data = dataEdit.getText().toString();
-                if (data.isEmpty()) {
-                    Toast.makeText(GenerateQR.this, "Please enter some data to generate QR code", Toast.LENGTH_LONG).show();
-                } else {
-                    // Generate the QR code using ZXing
-                    try {
-                        Bitmap qrCodeBitmap = generateQRCode(data, 920); // Adjust the size of the QR
-                        instructionText.setVisibility(View.GONE);
-                        qrCodeIV.setImageBitmap(qrCodeBitmap);
-                    } catch (WriterException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        });
+        // Receive the passenger ID from the intent
+        Intent intent = getIntent();
+        String passengerId = intent.getStringExtra("passengerId");
+
+        // Generate the QR code based on the passenger ID
+        try {
+            Bitmap qrCodeBitmap = generateQRCode(passengerId, 1020); // Adjust the size of the QR
+            qrCodeIV.setImageBitmap(qrCodeBitmap);
+        } catch (WriterException e) {
+            e.printStackTrace();
+        }
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,3 +69,4 @@ public class GenerateQR extends AppCompatActivity {
         return bitmap;
     }
 }
+

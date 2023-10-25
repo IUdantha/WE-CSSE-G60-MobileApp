@@ -38,7 +38,9 @@ app.listen(PORT, () => {
 const passengerRouter = require("./routes/passengerRoutes.js");
 app.use("/passenger", passengerRouter); //http://localhost:8060/passenger
 
-
 const TicketInspectorRouter = require("./routes/ticketInspectorRoutes.js");
 app.use("/ticketInspector", TicketInspectorRouter);
+
+const loginRouter = require("./routes/loginRoute.js");
+app.use("/login", loginRouter);
 

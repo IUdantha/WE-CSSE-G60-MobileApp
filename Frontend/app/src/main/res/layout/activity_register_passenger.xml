@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="@drawable/back_4"
+    tools:context=".activities.RegisterPassenger">
+
+    <TextView
+        android:id="@+id/idTVPassengerRegisterHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="15dp"
+        android:gravity="left"
+        android:text="Create Passenger Account"
+        android:textColor="@color/DarkYellow"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.077" />
+
+    <TextView
+        android:id="@+id/idTVfName"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="25dp"
+        android:text="First Name"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/idTVPassengerRegisterHeading"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/idTVPassengerRegisterHeading"
+        app:layout_constraintTop_toBottomOf="@+id/idTVPassengerRegisterHeading" />
+
+    <EditText
+        android:id="@+id/idEditTextfName"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@drawable/input_field_shape"
+        android:drawableLeft="@drawable/icon_name"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:hint="Enter your first name"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="#717070"
+        app:layout_constraintEnd_toEndOf="@+id/idTVfName"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/idTVfName"
+        app:layout_constraintTop_toBottomOf="@+id/idTVfName" />
+
+    <TextView
+        android:id="@+id/idTVlName"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:text="Last Name"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/idEditTextfName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/idEditTextfName"
+        app:layout_constraintTop_toBottomOf="@+id/idEditTextfName" />
+
+    <EditText
+        android:id="@+id/idEditTextlName"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@drawable/input_field_shape"
+        android:drawableLeft="@drawable/icon_name"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:hint="Enter your full name"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="#717070"
+        app:layout_constraintEnd_toEndOf="@+id/idTVlName"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/idTVlName"
+        app:layout_constraintTop_toBottomOf="@+id/idTVlName" />
+
+    <TextView
+        android:id="@+id/idTVEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Email :  "
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/idEditTextlName"
+        app:layout_constraintStart_toStartOf="@id/idEditTextlName"
+        app:layout_constraintTop_toBottomOf="@id/idEditTextlName" />
+
+    <EditText
+        android:id="@+id/idEditTextEmail"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@drawable/input_field_shape"
+        android:drawableLeft="@drawable/icon_email"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:hint="Enter your email"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="#717070"
+        app:layout_constraintEnd_toEndOf="@+id/idTVEmail"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/idTVEmail"
+        app:layout_constraintTop_toBottomOf="@+id/idTVEmail" />
+
+    <TextView
+        android:id="@+id/idTVPassword"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:text="Password : "
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/idEditTextEmail"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/idEditTextEmail"
+        app:layout_constraintTop_toBottomOf="@id/idEditTextEmail" />
+
+    <EditText
+        android:id="@+id/idEditTextPassword"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:textColor="@color/black"
+        android:background="@drawable/input_field_shape"
+        android:drawableLeft="@drawable/icon_email"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:textColorHint="#717070"
+        android:hint="Enter your password"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/idEditTextEmail"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/idTVPassword"
+        app:layout_constraintTop_toBottomOf="@+id/idTVPassword" />
+
+    <TextView
+        android:id="@+id/idTVSelectType"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:text="Select Account Type"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/idEditTextPassword"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/idEditTextPassword"
+        app:layout_constraintTop_toBottomOf="@id/idEditTextPassword" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:entries="@array/account_types"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/idTVSelectType"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/idTVSelectType"
+        app:layout_constraintTop_toBottomOf="@+id/idTVSelectType" />
+
+    <EditText
+        android:id="@+id/editTextNIC"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="NIC"
+        android:textColor="@color/black"
+        android:background="@drawable/input_field_shape"
+        android:drawableLeft="@drawable/icon_nic"
+        android:drawablePadding="15dp"
+        android:ems="10"
+        android:paddingLeft="10dp"
+        android:textColorHint="#717070"
+        android:inputType="text"
+        android:layout_marginTop="12dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/spinner"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spinner"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"/>
+
+    <EditText
+        android:id="@+id/editTextPassport"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="Passport"
+        android:textColor="@color/black"
+        android:background="@drawable/input_field_shape"
+        android:drawableLeft="@drawable/icon_passport"
+        android:drawablePadding="15dp"
+        android:paddingLeft="10dp"
+        android:ems="10"
+        android:textColorHint="#717070"
+        android:inputType="text"
+        android:layout_marginTop="12dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/spinner"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spinner"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"/>
+
+    <Button
+        android:id="@+id/idBTNSignUp"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#F1B110"
+        android:text="Sign Up"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="45px"
+        app:layout_constraintEnd_toEndOf="@+id/idEditTextPassword"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/idEditTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <TextView
+        android:id="@+id/idHaveAccount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Already have an account? "
+        android:textColor="@color/DarkYellow"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/idBTNSignUp"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/idBTNSignUp"
+        app:layout_constraintTop_toBottomOf="@+id/idBTNSignUp"/>
+
+    <TextView
+        android:id="@+id/loginLink"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:clickable="true"
+        android:onClick="openLoginScreen"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="Sign In"
+        android:textColor="@color/lightBlue"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/idHaveAccount"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/idHaveAccount"
+        app:layout_constraintTop_toBottomOf="@+id/idHaveAccount"/>
+
+    <!--    <Button-->
+<!--        android:id="@+id/idBTNOtherHome"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="54dp"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:backgroundTint="#D84315"-->
+<!--        android:text="Other Home"-->
+<!--        android:textAllCaps="true"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="45px"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/idBTNSignUp"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/idBTNSignUp"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/idBTNSignUp" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>
+

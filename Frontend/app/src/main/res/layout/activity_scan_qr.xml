@@ -3,7 +3,78 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
     tools:context=".activities.ScanQR">
 
+    <TextView
+        android:id="@+id/TVdialogHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Passenger Validation Success"
+        android:textColor="#06610A"
+        android:layout_margin="20dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/imageViewVerify"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/success_green2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/TVdialogHeader"
+        android:visibility="gone"
+       />
+
+    <TextView
+        android:id="@+id/passengerInfoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="15dp"
+        android:gravity="fill"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewVerify"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/imageViewVerify"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewVerify" />
+
+    <Button
+        android:id="@+id/btnScanAgain"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#3493FF"
+        android:text="Scan Again"
+        app:layout_constraintStart_toEndOf="@+id/passengerInfoTextView"
+        app:layout_constraintStart_toStartOf="@+id/passengerInfoTextView"
+        app:layout_constraintTop_toBottomOf="@+id/passengerInfoTextView"
+        android:visibility="gone"
+       />
+
+    <Button
+        android:id="@+id/btnOk"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:backgroundTint="#65C867"
+        android:text="Ok"
+        app:layout_constraintBottom_toBottomOf="@+id/btnScanAgain"
+        app:layout_constraintEnd_toEndOf="@+id/passengerInfoTextView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btnScanAgain"
+        app:layout_constraintTop_toTopOf="@+id/btnScanAgain"
+        app:layout_constraintVertical_bias="0.0"
+        android:visibility="gone"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

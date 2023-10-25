@@ -53,7 +53,7 @@ public class ChooseRole extends AppCompatActivity {
 
                 try {
                     if (selectedId == passengerOption.getId()) {
-                        Intent passengerIntent = new Intent(ChooseRole.this, Register.class);
+                        Intent passengerIntent = new Intent(ChooseRole.this, RegisterPassenger.class);
                         startActivity(passengerIntent);
                     }else if (selectedId == inspectorOption.getId()) {
                         Intent inspectorIntent = new Intent(ChooseRole.this, RegisterTicketInspector.class);

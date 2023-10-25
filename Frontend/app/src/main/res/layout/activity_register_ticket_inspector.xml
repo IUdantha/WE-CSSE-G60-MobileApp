@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
-    android:background="@drawable/back_2"
+    android:background="@drawable/back_6"
     tools:context=".activities.RegisterTicketInspector">
 
     <TextView
@@ -16,25 +16,25 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="15dp"
-        android:gravity="left"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:text="Create Account"
-        android:textColor="@color/DarkYellow"
-        android:textSize="30sp"
+        android:text="Create \nTicket Inspector\n Account"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.212" />
+        app:layout_constraintVertical_bias="0.031" />
 
     <TextView
         android:id="@+id/idTVEmpID"
         android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="60dp"
         android:text="Employee ID"
         android:textColor="@color/black"
         android:textSize="18sp"
@@ -176,19 +176,19 @@
         app:layout_constraintStart_toStartOf="@+id/idEditTextInspectorPassword"
         app:layout_constraintTop_toBottomOf="@+id/idEditTextInspectorPassword" />
 
-    <Button
-        android:id="@+id/idBTNOtherHome"
-        android:layout_width="0dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="5dp"
-        android:backgroundTint="#D84315"
-        android:text="Other Home"
-        android:textAllCaps="true"
-        android:textColor="@color/white"
-        android:textSize="45px"
-        app:layout_constraintEnd_toEndOf="@+id/idBTNSignUp"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/idBTNSignUp"
-        app:layout_constraintTop_toBottomOf="@+id/idBTNSignUp" />
+<!--    <Button-->
+<!--        android:id="@+id/idBTNOtherHome"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="54dp"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:backgroundTint="#D84315"-->
+<!--        android:text="Other Home"-->
+<!--        android:textAllCaps="true"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="45px"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/idBTNSignUp"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/idBTNSignUp"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/idBTNSignUp" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>
 

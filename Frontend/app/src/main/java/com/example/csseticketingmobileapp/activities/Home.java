@@ -12,14 +12,13 @@ import com.example.csseticketingmobileapp.R;
 
 public class Home extends AppCompatActivity {
 
-    private Button generateQRBtn, scanQRBtn, loginBtn, registerBtn, violationBtn, myAccountBtn, homePassengerBtn, homeInspectorBtn ;
+    private Button scanQRBtn, loginBtn, registerBtn, violationBtn, myAccountBtn, homePassengerBtn, homeInspectorBtn ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        generateQRBtn = findViewById(R.id.idBTNGenerate);
         scanQRBtn = findViewById(R.id.idBTNScan);
         homePassengerBtn = findViewById(R.id.idBTNHomePassenger);
         homeInspectorBtn = findViewById(R.id.idBTNHomeInspector);
@@ -27,14 +26,6 @@ public class Home extends AppCompatActivity {
         registerBtn = findViewById(R.id.idBTNRegister);
         myAccountBtn = findViewById(R.id.idBTNMyAccount);
         violationBtn = findViewById(R.id.idBTNViolation);
-
-        generateQRBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Home.this, GenerateQR.class);
-                startActivity(i);
-            }
-        });
 
         scanQRBtn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -87,7 +78,7 @@ public class Home extends AppCompatActivity {
         violationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Home.this, ViolationForm.class);
+                Intent i = new Intent(Home.this, ViolationReport.class);
                 startActivity(i);
             }
         });
